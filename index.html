@@ -211,15 +211,8 @@
                 <h3 class="hero-font text-2xl font-bold text-purple-700 mb-4">Konfirmasi Kehadiran</h3>
                 <p class="mb-6">Mohon konfirmasi kehadiran Anda sebelum tanggal 12 Juli</p>
                 
-                <div class="flex justify-center space-x-4">
-                    <button onclick="rsvp('ya')" class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-all duration-300">
-                        <i class="fas fa-check-circle mr-2"></i> Hadir
-                    </button>
-                    <button onclick="rsvp('tidak')" class="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition-all duration-300">
-                        <i class="fas fa-times-circle mr-2"></i> Tidak Hadir
-                    </button>
-                </div>
-            </div>
+                
+            
         </div>
         
         <!-- Footer -->
@@ -275,16 +268,7 @@
         });
         
         // Fungsi RSVP
-        function rsvp(response) {
-            const message = response === 'ya' 
-                ? 'Terima kasih telah mengkonfirmasi kehadiran! Sampai jumpa di acara!' 
-                : 'Wajib Konfrmasi Ke Bpk Budi Santoso';
-            
-            alert(message);
-            
-            // Kirim data ke server (simulasi)
-            console.log(`RSVP: ${response}`);
-        }
+        
         
         // Animasi untuk elemen saat muncul
         const observer = new IntersectionObserver((entries) => {
